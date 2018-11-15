@@ -36,11 +36,11 @@ if (false === function_exists('gettext')) {
  */
 $localeToSet = $argv[1] ?? $_GET['locale'] ?? 'zh_HK';
 if (($locale = setlocale(LC_ALL, [
-    $localeToSet,
     "$localeToSet.utf8",
     "$localeToSet.utf-8",
     "$localeToSet.UTF8",
     "$localeToSet.UTF-8",
+    $localeToSet,
 ])) === false) {
     throw new Exception($localeToSet . ' is not supported in this system');
 }
