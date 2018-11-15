@@ -17,4 +17,4 @@ msgstr  "Project-Id-Version: Codegroove.net Example Translations 0.0.1\n"
 
 #, php-format
 msgid   "Hello, %s, it is nice to see you today.\n"
-msgstr  ""
+msgstr  "Howdy, %s, it's nice to see you today.\n"
