@@ -34,8 +34,14 @@ if (false === function_exists('gettext')) {
  * $ sudo locale-gen en_US.UTF-8
  * $ sudo locale-gen de_DE.UTF-8
  */
-$localeToSet = 'zh_HK.utf8';
-if (($locale = setlocale(LC_ALL, $localeToSet)) === false) {
+$localeToSet = $_GET['locale'] ?? 'zh_HK.utf8';
+if (($locale = setlocale(LC_ALL, [
+    $localeToSet,
+    "$localeToSet.utf8",
+    "$localeToSet.utf-8",
+    "$localeToSet.UTF8",
+    "$localeToSet.UTF-8",
+])) === false) {
     throw new Exception($localeToSet . ' is not supported in this system');
 }
 
