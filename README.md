@@ -4,11 +4,16 @@ This small program shows the basics of using the GNU Project library gettext for
 Run this program by executing it from the command line:
 
 ```
-$ php gettext-example.php
+$ php gettext-example.php [locale]
 ```
 
 Run this program with PHP's built-in test server:
 
 ```
 php -S localhost:8001 gettext-example.php
+```
+
+Then you may use your browser to visit:
+```
+http://localhost:8001/?locale=[locale]
 ```

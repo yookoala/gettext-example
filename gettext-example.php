@@ -34,7 +34,7 @@ if (false === function_exists('gettext')) {
  * $ sudo locale-gen en_US.UTF-8
  * $ sudo locale-gen de_DE.UTF-8
  */
-$localeToSet = $_GET['locale'] ?? 'zh_HK.utf8';
+$localeToSet = $argv[1] ?? $_GET['locale'] ?? 'zh_HK';
 if (($locale = setlocale(LC_ALL, [
     $localeToSet,
     "$localeToSet.utf8",
@@ -58,6 +58,5 @@ bindtextdomain('messages', 'locale');
 textdomain('messages');
 
 
-printf("locale: %s - ", $locale);
-$name = "Vic";
-printf(_("Hello, %s, it is nice to see you today.\n"), $name);
+printf("locale: %s\n", $locale);
+printf(_("Hello, %s, it is nice to see you today.\n"), "Vic");
