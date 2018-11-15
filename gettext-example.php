@@ -45,6 +45,8 @@ if (($locale = setlocale(LC_ALL, [
     throw new Exception($localeToSet . ' is not supported in this system');
 }
 
+putenv("LANGUAGE="); // reset LANGUAGE parameter
+
 /**
  * Because the .po file is named messages.po, the text domain must be named
  * that as well. The second parameter is the base directory to start
